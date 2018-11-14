@@ -1,0 +1,61 @@
+{
+  "name": "sock",
+  "version": "1.0.0",
+  "description": "Website performance optimization common methods and scaffolding tools guide.",
+  "main": "rollup.config.prod.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "mockjs": "^1.0.1-beta3",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.1",
+    "gulp-webserver": "^0.9.1",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^3.0.7",
+    "run-sequence": "^2.2.1",
+    "serve-index": "^1.9.1",
+    "through2": "^2.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sock": "gulp default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guguaihaha/sock.git"
+  },
+  "keywords": [
+    "sock",
+    "website",
+    "scaffolding",
+    "tools",
+    "methods"
+  ],
+  "author": "zhangjinglin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guguaihaha/sock/issues"
+  },
+  "homepage": "https://github.com/guguaihaha/sock#readme"
+}

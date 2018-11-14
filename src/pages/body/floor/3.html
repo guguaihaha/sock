@@ -1,0 +1,620 @@
+<div class="lazyload_flr" title="核心场景1" style="height: 480px;"></div>
+<style type="text/css">
+    .fl_sort{
+        height:480px;
+    }
+    .fl_box{
+        float: left;
+        width:390px;
+        height:450px;
+        margin: 0 10px 30px 0;
+        background: #fff;
+    }
+    .fl_box_head{
+        height:60px;
+        padding: 0 20px;
+    }
+    .fl_box_link{
+        display: inline-block;
+        position: relative;
+        height:40px;
+        padding: 8px 0 0 0;
+        color: #666;
+    }
+    .fl_box_h3{
+        float: left;
+        font-size: 22px;
+        color: #222;
+        line-height: 44px;
+    }
+    .fl_box_arrow{
+        float: left;
+        position: relative;
+        width:23px;
+        height:23px;
+        top:11px;
+        left:4px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAklEQVR4AewaftIAAAHiSURBVJXBvUuUcQAA4MefclJIGmWDUGr9CU72ZZwEgjYoHIH2MbUUIQTpFHdj2hBK/QFSQtCpSEc1lCIF1trUIhaGgwhd4hAHaoIHYr73nj5PxVJLixICkuhBK5pQhzx+YB6TmMGmCFWidWEIBbzEGJawipM4jQt4ggQGkfOfKnslMIqreIgpbNlrGcv4iqfoxgiu4T4KioJdCUyjCS2YxJZ4W5hECxoxjYSiYNczFNCJvL1qxcujEwU8VxTs6MQV9GHDfq+QFm8DfbiMLtsCAobQj3XRbiOFtHjr6McwQkASBbxT2gqSSCEt3nv8RXtAD8aVt4IkUkiLN47ugPP47GBWkEQKaaXNoTWgEUsObgVJpJAWbQHNAXVYdThbdlSI9hu1AXmccHD1mEUWGdGO40/AT5xxMPWYRRYZpZ3FYsA8LiqvHrPIIiNeG74ETKBXvFOYRRYZ5fViKmAGR9ChtDFkkVFeB47iQ8AmBjCKGtGuI6O8GoxgEJvBjhzmMI5K+60prxLj+IQ3tgW77iGBHGodTi1yqMZdRZUPGhoUbeA1LuExfuG7eBXowQS+4QYKiqrsVcAddGEYj/ACc1hAHnU4hzbcRDX6kfOfKtFyeIt29OAWmnEMa1jEPAbwEZsi/APwnHjX1+uAaQAAAABJRU5ErkJggg==);
+        background-repeat: no-repeat;
+        background-position: left top;
+    }
+    .fl_box_subtitle{
+        float: left;
+        font-size: 14px;
+        color: #999;
+        height:20px;
+        line-height: 20px;
+        margin: 12px 0 0 10px;
+    }
+    .fl_box_body{
+        position: relative;
+    }
+    .fl_box_tab_head{
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        background: #f7f7f7;
+    }
+    .fl_box_tab_item{
+        float: left;
+        width:78px;
+        cursor: pointer;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: color ease 0.2s;
+    }
+    .fl_box_tab_item a{
+        transition: color ease 0.2s;
+    }
+    .actives a{
+        color: #e33333 ;
+    }
+    .fl_box_item{
+        width:350px;
+        margin: 0 20px;
+        overflow: hidden;
+    }
+    .fl_box_slider{
+        width:1400px;
+        opacity: 1;
+        transform: translate3d(0px,0px,0px);
+        transition: none 0s ease 0s;
+        position: relative;
+    }
+    .fl_box_item:after{
+        content:" ";
+        display: block;
+        position: absolute;
+        width:100%;
+        height:1px;
+        bottom:0;
+        left:0;
+        background: #f5f5f5;
+    }
+    .fl_box_tab_content{
+        width:390px;
+        overflow: hidden;
+    }
+    .fl_slider{
+        float: left;
+        width:350px;
+        height:321px;
+        overflow: hidden;
+    }
+    .fl_slider a{
+        display: block;
+        position: relative;
+        height:107px;
+    }
+    .fl_slider a img{
+        width:100%;
+        height:100%;
+    }
+    .fl_slider_f{
+        float:left;
+    }
+    .fl_slider_img{
+        width:80px;
+        height:80px;
+        margin-top: 15px;
+    }
+    .fl_slider_rank{
+        width:30px;
+        height:40px;
+        margin: 36px 0 0 10px;
+        line-height: 40px;
+        font-size: 32px;
+        text-align: center;
+        font-family: 'impact' , sans-serif;
+    }
+    .fl_slider_rank_1{
+        color: #e74240;
+    }
+    .fl_slider_rank_2{
+        color:#ed713d ;
+    }
+    .fl_slider_rank_3{
+        color:#feb185 ;
+    }
+    .fl_slider_name{
+        display: block;
+        margin-left: 125px;
+        padding-top: 40px;
+        height:32px;
+        line-height: 16px;
+        font-size: 12px;
+        overflow: hidden;
+        color: #333;
+    }
+    .fl_slider a:hover .fl_slider_name{
+        color: #c81623;
+    }
+    .fl_box_pointer{
+        position: absolute;
+        left:0;
+        bottom:-26px;
+        width:100%;
+        height:16px;
+        text-align: center;
+    }
+    .fl_box_pointer i{
+        position: relative;
+        display: inline-block;
+        width:16px;
+        height:16px;
+        margin-right: 1px;
+        border-radius: 50%;
+    }
+    .fl_box_pointer i.active{
+        background: #fdd9dd;
+    }
+    .fl_box_pointer i.active:after{
+        border:2px solid transparent;
+        background: #eb3436;
+    }
+    .fl_box_pointer i:after{
+        content:" ";
+        display: block;
+        position: absolute;
+        left:3px;
+        top:3px;
+        width:6px;
+        height:6px;
+        border-radius: 50%;
+        border:2px solid #b9beba;
+
+    }
+    .fl_box_type1{
+        width:350px;
+        height:355px;
+        position: relative;
+        margin: auto;
+    }
+    .fl_box_button{
+        width:20px;
+        height:40px;
+        position: absolute;
+        border-radius: 0;
+        line-height: 40px;
+        top:50%;
+        margin-top: -20px;
+        font-size: 14px;
+        z-index: 2;
+        background: rgba(0,0,0,.15);
+        border:0;
+        outline: 0;
+        padding: 0;
+        color:hsla(0,0%,100%,.4);
+        transition: background ease 0.2s;
+        cursor: pointer;
+    }
+    .fl_box_button:hover{
+        background-color:rgba(0,0,0,.45);
+    }
+    .fl_box_button_prev{
+        left:-20px;
+    }
+    .fl_box_button_next{
+        right:-20px;
+    }
+    .slider_list{
+        width:100%;
+        height:100%;
+        overflow: hidden;
+    }
+    .slider_wrap{
+        width:1750px;
+    }
+    .slider_link{
+        float:left;
+        width:350px;
+        position: relative;
+        height:355px;
+        overflow: hidden;
+    }
+    .slider_link_top{
+        width:350px;
+        height:128px;
+        display: block;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .slider_link_top img{
+        width:100%;
+        height:100%;
+    }
+    .slider_link_top:after{
+        content:"";
+        position:absolute;
+        bottom:0;
+        left:50%;
+        margin-left: -8px;
+        display: block;
+        width:0;
+        height:0;
+        border:8px solid transparent;
+        border-bottom:8px solid #fff;
+    }
+    .slider_link_item{
+        width:105px;
+        height:105px;
+        display: inline-block;
+        margin:0 8px;
+        background: #fff;
+        overflow: hidden;
+        line-height: 105px;;
+    }
+    .slider_link_item img{
+        width:100%;
+        height:100%;
+    }
+    .slider_link_middle{
+        margin:0 -12px;
+    }
+    .slider_title{
+        width:300px;
+        height:58px;
+        line-height: 58px;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 18px;
+        color: #222;
+        margin: 0 auto;
+    }
+    .slider_content{
+        height:36px;
+        line-height: 18px;
+        font-size: 14px;
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
+        color: #666;
+    }
+    .slider_wrap img{
+        opacity: 1;
+        transition: opacity ease 0.2s;
+    }
+    .slider_wrap img:hover{
+        opacity: 0.8;
+    }
+    .fl_box_last{
+        margin-right: 0;
+    }
+    .slider_coupon{
+        height:355px;
+        overflow: hidden;
+        float: left;
+    }
+    .slider_coupon_link{
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+        background: #f6f6f6;
+        height:118px;
+        display: block;
+    }
+    .slider_coupon_link:before,.slider_coupon_link:after{
+        content:"";
+        display: block;
+        width:16px;
+        height:16px;
+        position: absolute;
+        background: #fff;
+        border-radius: 50%;
+        right:54px;
+    }
+    .slider_coupon_link:before{
+        top:-8px;
+    }
+    .slider_coupon_link:after{
+        bottom:-8px;
+    }
+    .slider_coupon_img{
+        width:70px;
+        height:70px;
+        padding: 10px;
+        float:left;
+        margin: 14px 0 0 10px;
+        border-radius: 50%;
+        background: #fff;
+    }
+    .slider_coupon_img img{
+        width:100%;
+        height:100%;
+    }
+    .slider_coupon_more{
+        float: right;
+    }
+    .slider_coupon_more{
+        float: right;
+        line-height: 118px;
+        height:100%;
+        font-size: 12px;
+        margin-right: 34px;
+        color:#333;
+    }
+    .slider_coupon_more span{
+        display: inline-block;
+        width:1px;
+        line-height: 15px;
+        vertical-align: middle;
+    }
+    .slider_coupon_price{
+        font-family: 'impact', sans-serif;
+        display: block;
+        height:38px;
+        line-height: 38px;
+    }
+    .slider_coupon_color{
+        font-size: 14px;
+        color: #e33333;
+    }
+    .slider_coupon_price span{
+        font-size: 36px;
+    }
+    .slider_coupon_price i{
+        font-size: 16px;
+    }
+    .slider_coupon_info{
+        padding-top: 15px;
+        margin:0 72px 0 110px;
+    }
+    .slider_coupon_limit{
+        color:#b1b3b0;
+        font-size: 14px;
+        height:24px;
+        line-height: 24px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .slider_coupon_desc{
+        color:#767b77;
+        font-size: 14px;
+        height:24px;
+        line-height: 24px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .slider_coupon_link:hover .slider_coupon_more{
+        color: #e33333;
+    }
+</style>
+<div class="fl_sort" id="fl_sort">
+    <div class="f_row_1 fl_sort_inner">
+        <div class="fl_box">
+            <div class="fl_box_head">
+                <a href="#" class="fl_box_link">
+                    <span class="fl_box_h3">排行榜</span>
+                    <i class="fl_box_arrow"></i>
+                    <span class="fl_box_subtitle">专属你的购物指南</span>
+                </a>
+            </div>
+            <div class="fl_box_body">
+                <div class="fl_box_tab_head">
+                    <div class="fl_box_tab_item actives">
+                        <a href="#">手机通讯</a>
+                    </div>
+                    <div class="fl_box_tab_item">
+                        <a href="#">面部护肤</a>
+                    </div>
+                    <div class="fl_box_tab_item">
+                        <a href="#">厨房小电</a>
+                    </div>
+                    <div class="fl_box_tab_item">
+                        <a href="#">男装</a>
+                    </div>
+                    <div class="fl_box_tab_item">
+                        <a href="#">休闲食品</a>
+                    </div>
+                </div>
+                <div class="fl_box_tab_content">
+                    <div class="fl_box_item">
+                        <div class="fl_box_slider">
+                            <div class="fl_slider">
+                                <a href="#">
+                                  <div class="fl_slider_f fl_slider_img">
+                                      <img src="//img12.360buyimg.com/mobilecms/s80x80_jfs/t23443/18/2273539374/181480/b088d58/5b7bb76cN2dee86f9.jpg!q90.webp" />
+                                  </div>
+                                  <span class="fl_slider_f fl_slider_rank fl_slider_rank_1">
+                                      1
+                                  </span>
+                                  <span class="fl_slider_name">大宝 雪肤活力霜50g（面霜 保湿霜 亮肤补水）</span>
+                                </a>
+                                <a href="#">
+                                    <div class="fl_slider_f fl_slider_img">
+                                        <img src="//img12.360buyimg.com/mobilecms/s80x80_jfs/t23443/18/2273539374/181480/b088d58/5b7bb76cN2dee86f9.jpg!q90.webp" />
+                                    </div>
+                                  <span class="fl_slider_f fl_slider_rank fl_slider_rank_2">
+                                      2
+                                  </span>
+                                    <span class="fl_slider_name">大宝 雪肤活力霜50g（面霜 保湿霜 亮肤补水）</span>
+                                </a>
+                                <a href="#">
+                                    <div class="fl_slider_f fl_slider_img">
+                                        <img src="//img12.360buyimg.com/mobilecms/s80x80_jfs/t23443/18/2273539374/181480/b088d58/5b7bb76cN2dee86f9.jpg!q90.webp" />
+                                    </div>
+                                  <span class="fl_slider_f fl_slider_rank fl_slider_rank_3">
+                                      3
+                                  </span>
+                                    <span class="fl_slider_name">大宝 雪肤活力霜50g（面霜 保湿霜 亮肤补水）</span>
+                                </a>
+                            </div>
+                            <div class="fl_slider">
+                                <a href="#">
+                                    <div class="fl_slider_f fl_slider_img">
+                                        <img src="//img12.360buyimg.com/mobilecms/s80x80_jfs/t23443/18/2273539374/181480/b088d58/5b7bb76cN2dee86f9.jpg!q90.webp" />
+                                    </div>
+                                  <span class="fl_slider_f fl_slider_rank fl_slider_rank_1">
+                                      1
+                                  </span>
+                                    <span class="fl_slider_name">大宝 雪肤活力霜50g（面霜 保湿霜 亮肤补水）</span>
+                                </a>
+                                <a href="#">
+                                    <div class="fl_slider_f fl_slider_img">
+                                        <img src="//img12.360buyimg.com/mobilecms/s80x80_jfs/t23443/18/2273539374/181480/b088d58/5b7bb76cN2dee86f9.jpg!q90.webp" />
+                                    </div>
+                                  <span class="fl_slider_f fl_slider_rank fl_slider_rank_2">
+                                      2
+                                  </span>
+                                    <span class="fl_slider_name">大宝 雪肤活力霜50g（面霜 保湿霜 亮肤补水）</span>
+                                </a>
+                                <a href="#">
+                                    <div class="fl_slider_f fl_slider_img">
+                                        <img src="//img12.360buyimg.com/mobilecms/s80x80_jfs/t23443/18/2273539374/181480/b088d58/5b7bb76cN2dee86f9.jpg!q90.webp" />
+                                    </div>
+                                  <span class="fl_slider_f fl_slider_rank fl_slider_rank_3">
+                                      3
+                                  </span>
+                                    <span class="fl_slider_name">大宝 雪肤活力霜50g（面霜 保湿霜 亮肤补水）</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="fl_box_pointer">
+                            <i class="active"></i>
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fl_box">
+            <div class="fl_box_head">
+                <a href="#" class="fl_box_link">
+                    <span class="fl_box_h3">会买专辑</span>
+                    <i class="fl_box_arrow"></i>
+                    <span class="fl_box_subtitle">甄选优质好物</span>
+                </a>
+            </div>
+            <div class="fl_box_body">
+                <div class="fl_box_type1">
+                    <button class="fl_box_button fl_box_button_prev"><i class="icon-left-open"></i></button>
+                    <button class="fl_box_button fl_box_button_next"><i class="icon-right-open"></i></button>
+                    <div class="slider_list">
+                        <div class="slider_wrap">
+                            <a href="#" class="slider_link">
+                                <div class="slider_link_top">
+                                    <img src="//img14.360buyimg.com/mobilecms/s700x256_jfs/t17728/210/705753460/51212/6c431976/5aa229f7N76faed6d.jpg!q90!cc_350x128.webp" />
+                                </div>
+                                <div class="slider_link_middle">
+                                    <div class="slider_link_item">
+                                        <img src="//img12.360buyimg.com/mobilecms/s210x210_jfs/t21529/182/296433106/67187/f8fe51ad/5b08ff97Nf306edf9.jpg!q90" />
+                                    </div>
+                                    <div class="slider_link_item">
+                                        <img src="//img11.360buyimg.com/mobilecms/s210x210_jfs/t18580/202/1754635171/229093/35d74487/5ad85152N79227d0d.jpg!q90" />
+                                    </div>
+                                    <div class="slider_link_item">
+                                        <img src="//img13.360buyimg.com/mobilecms/s210x210_jfs/t4831/198/2044532416/118622/56acbc69/58f6cebeNe454f9ec.jpg!q90" />
+                                    </div>
+                                </div>
+                                <div class="slider_link_bottom">
+                                    <div class="slider_title">老爸老妈新寄托，电脑伴多彩生活</div>
+                                    <div class="slider_content">老爸老妈使用的电脑一般而言不需要太高的硬件配置，只要平台的基础性能较好，响应迅速，显示器的显示效果出色，并且鼠标键盘用起来也比较顺手舒服就足够了。这些电脑配置对于老年人上网、炒股、听歌、追剧看电影和棋牌游戏来说绝对足够了，买一台这样的电脑给父母，可以大大丰富他们的老年生活，愉悦他们的心情。</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="fl_box_pointer">
+                        <i class="active"></i>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fl_box fl_box_last">
+            <div class="fl_box_head">
+                <a href="#" class="fl_box_link">
+                    <span class="fl_box_h3">领券中心</span>
+                    <i class="fl_box_arrow"></i>
+                    <span class="fl_box_subtitle">前往领券中心</span>
+                </a>
+            </div>
+            <div class="fl_box_body">
+                <div class="fl_box_type1">
+                    <div class="slider_list">
+                        <div class="slider_wrap" style="width:1440px">
+                            <div class="slider_coupon" style="width:350px;">
+                                <a href="#" class="slider_coupon_link">
+                                    <div class="slider_coupon_img">
+                                        <img src="//m.360buyimg.com/babel/s140x140_jfs/t1/4053/6/16210/104533/5be134afEe885dbf3/90bca3dba8d9c2e1.jpg!q90!cc_70x70.webp" />
+                                    </div>
+                                    <div class="slider_coupon_more">
+                                        <span>更多精选好券</span>
+                                    </div>
+                                    <div class="slider_coupon_info">
+                                        <div class="slider_coupon_price slider_coupon_color">
+                                            <i>¥</i>
+                                            <span>150</span>
+                                        </div>
+                                        <div class="slider_coupon_limit" title="满299可用">满299可用</div>
+                                        <div class="slider_coupon_desc" title="生鲜部分商品可用">生鲜部分商品可用</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="slider_coupon_link">
+                                    <div class="slider_coupon_img">
+                                        <img src="//m.360buyimg.com/babel/s140x140_jfs/t1/4053/6/16210/104533/5be134afEe885dbf3/90bca3dba8d9c2e1.jpg!q90!cc_70x70.webp" />
+                                    </div>
+                                    <div class="slider_coupon_more">
+                                        <span>更多精选好券</span>
+                                    </div>
+                                    <div class="slider_coupon_info">
+                                        <div class="slider_coupon_price slider_coupon_color">
+                                            <i>¥</i>
+                                            <span>150</span>
+                                        </div>
+                                        <div class="slider_coupon_limit" title="满299可用">满299可用</div>
+                                        <div class="slider_coupon_desc" title="生鲜部分商品可用">生鲜部分商品可用</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="slider_coupon_link">
+                                    <div class="slider_coupon_img">
+                                        <img src="//m.360buyimg.com/babel/s140x140_jfs/t1/4053/6/16210/104533/5be134afEe885dbf3/90bca3dba8d9c2e1.jpg!q90!cc_70x70.webp" />
+                                    </div>
+                                    <div class="slider_coupon_more">
+                                        <span>更多精选好券</span>
+                                    </div>
+                                    <div class="slider_coupon_info">
+                                        <div class="slider_coupon_price slider_coupon_color">
+                                            <i>¥</i>
+                                            <span>150</span>
+                                        </div>
+                                        <div class="slider_coupon_limit" title="满299可用">满299可用</div>
+                                        <div class="slider_coupon_desc" title="生鲜部分商品可用">生鲜部分商品可用</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fl_box_pointer">
+                        <i class="active"></i>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

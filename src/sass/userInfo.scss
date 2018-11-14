@@ -1,0 +1,285 @@
+// ------------ UserInfo --------------
+.userinfo_icon_{
+  background: $hover-bg-color;
+  border-color:$short-border-color;
+  border-bottom:none;
+  padding-bottom: 2px;
+}
+
+#userinfo{
+  border-bottom:1px solid $short-border-color;
+  background-color: $short-color;
+  .c_w{
+    height: 30px;
+    line-height: 30px;
+    color: $short-font-color;
+}
+  li{
+    float:left;
+}
+}
+.icon-location{
+  font-size: 15px;
+  color:$primary-color;
+}
+.userinfo_location{
+  margin-left:$short-position-left;
+  position: relative;
+  float: left;
+  z-index: 21;
+  &:hover{
+    .userinfo_layer{
+      display: block;
+    }
+    .userinfo_icon{
+      @extend .userinfo_icon_
+    }
+  }
+}
+.userinfo_icon{
+  height:28px;
+  line-height: 28px;
+  padding: 0 7px;
+  border:1px solid $short-color;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.userinfo_layer{
+  display: none;
+  position: absolute;
+  border: 1px solid $short-border-color;
+  background: $hover-bg-color ;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  left:0;
+  top:30px;
+  width:300px;
+  padding: 10px;
+}
+.dropdown{
+  position: relative;
+}
+.userinfo_global_wrap{
+  margin: 10px 0 10px 10px;
+}
+.userinfo_global_split{
+  width:262px;
+  height:1px;
+  background: $short-split-color;
+}
+.userinfo_global_text{
+  margin: 9px 0;
+}
+.userinfo_global_item{
+  float:left;
+  a{
+    display: block;
+    overflow: hidden;
+    color:#999;
+    &:hover{
+      color:$primary-color
+  }
+}
+}
+.userinfo_global_list{
+  overflow: hidden;
+}
+.userinfo_area_name{
+  float:left;
+  width:120px;
+  line-height: 26px;
+}
+.userinfo_global_ico_russia{
+  background-position: -20px 0;
+  border: 1px solid #ebebeb;
+}
+.userinfo_global_ico_indonesia{
+  background-position: 0 -17px;
+  border: 1px solid #ebebeb;
+}
+.userinfo_global_ico_spain{
+  background-position: -40px 0;
+}
+.userinfo_global_ico_thailand{
+  background-position: -20px -17px;
+}
+.userinfo_login{
+}
+.userinfo_register{
+  color:$primary-color;
+  &:hover{
+    color:$short-hover-color
+}
+}
+#userinfo_area_nav{
+  z-index: 23;
+}
+.userinfo_area_list{
+  li{
+    position: relative;
+    z-index: 22;
+}
+  .userinfo_space{
+    overflow: hidden;
+    margin: 11px 5px 0;
+    width:1px;
+    height:10px;
+    padding: 0;
+    background: $short-border-color;
+}
+}
+.userinfo_dropdown{
+  display: none;
+  position: absolute;
+  border:1px solid $short-border-color;
+  background: $hover-bg-color;
+  box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+  padding: 10px 0 10px 15px;
+}
+.userinfo_mine_dropdown{
+  left:0;
+  top:30px;
+  width:280px;
+  .userinfo_top_list{
+    padding:0 0 10px 0;
+    overflow: hidden;
+    .userinfo_mine_item{
+      width:126px;
+      float: left;
+    }
+  }
+  .userinfo_bottom_list{
+    border-top:1px solid $short_line-color;
+    padding: 10px 0 0 0;
+    overflow: hidden;
+    .userinfo_mine_item{
+      width:126px;
+      float: left;
+    }
+  }
+}
+
+.userinfo_hover{
+  .c_sp{
+    height:28px;
+    line-height: 28px;
+    border:1px solid $short-color;
+    border-bottom:0;
+    padding: 0 0 2px 7px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .userinfo_dropdown{
+    line-height: 24px;
+  }
+  &:hover{
+    .c_sp{
+      background: $hover-bg-color;
+    }
+    .userinfo_dropdown{
+      display: block;
+    }
+  }
+}
+.userinfo_import_dropdown{
+  left:0;
+  top:30px;
+  width:140px;
+}
+.userinfo_import_item{
+  width:56px;
+  float:left;
+  white-space: nowrap;
+}
+.userinfo_custom_dropdown{
+  width:170px;
+  padding: 10px 0;
+  right:0;
+  top:30px;
+}
+.userinfo_custom_text{
+  padding-left: 15px;
+  font-weight: bold;
+  color: $short-custom-font;
+}
+.userinfo_custom_item{
+  width:70px;
+  float: left;
+  padding-left: 15px;
+}
+.userinfo_custom_split{
+   margin-top: 5px;
+   padding-top: 5px;
+  border-top:1px dotted $short-split-color;
+}
+.userinfo_nav_dropdown{
+  width:($width - 2)px;
+  right:-84px;
+  top:30px;
+  padding: 15px 0;
+}
+
+.userinfo_nav_list{
+  width:340px;
+  float: left;
+  padding-left: 20px;
+  dt{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: $short-custom-font;
+  }
+  dd{
+    float: left;
+    width:85px;
+    overflow: hidden;
+    white-space:nowrap;
+  }
+
+}
+.userinfo_nav_fl2,.userinfo_nav_fl3,.userinfo_nav_fl4{
+  width: 255px;
+  border-left:1px solid $short-split-color;
+}
+.userinfo_area_code{
+  position: absolute;
+  left: 3px;
+  width: 66px;
+  height: 66px;
+  border: 1px solid $short-code-border;
+  &:before{
+    content:" ";
+    position: absolute;
+    display: block;
+    top:-9px;
+    left:50%;
+    margin-left: -5px;
+    width:0;
+    height:0;
+    line-height: 0;
+    font-size: 0;
+    border-width:5px;
+    border-style:solid;
+    border-color:#e4e4e4 #e4e4e4 #f6f6f6;
+  }
+  .userinfo_area_qrcode{
+    margin: 4px auto;
+    width:60px;
+    height:60px;
+    background: $short-code-bg url('//misc.360buyimg.com/mtd/pc/index_2017/2.1.0/static/images/mobile_qrcode.png') 50% no-repeat;
+  }
+}
+.userinfo_area_dropdown{
+  width:190px;
+  right:0;
+  top:30px;
+  border: 1px solid $short-code-border;
+  background: #ffffff;
+  border-bottom:3px solid $short-code-black;
+}
+.userinfo_area_layer{
+  padding-right: 14px !important;
+}
+
+

@@ -1,0 +1,65 @@
+// ------------ Common method --------------
+body.b1{
+  background: $bg-color ;
+}
+.c_w{
+  margin: 0 auto;
+  width : $width;
+  position: relative;
+}
+.c_area_item{
+  float:left;
+  width:60px;
+  padding: 2px 0;
+  line-height: 24px;
+  a{
+    float:left;
+    padding: 0 8px;
+    &:hover{
+      background:$short-bg-color
+    }
+    &.c_selected{
+      background: $primary-color;
+      color: $hover-bg-color;
+    }
+  }
+}
+.c-clear{
+  clear: both;
+  height:0;
+  font-size:0;
+}
+.c_area_wrap{
+  overflow: hidden;
+}
+
+a{
+  color:$a-color;
+  text-decoration: none;
+  &:hover{
+    color:$a-hover-color
+  }
+}
+.c_icon_global{
+  height:12px;
+  display: block;
+  margin-top: -1px;
+  top:7px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAbCAYAAADYtRcLAAAAAklEQVR4AewaftIAAALFSURBVO3BTYhVVQAA4O9cn454xr+F0dA1FbOwQDBOgkFQizYtslzUokhCyBZCUWRBm9JVWSujRSW1iRDBCMKiaNMiqQ5URIU/pOgNRaJMHME3+m7PrpHKTMHj8Rim+b5Q17W/VSkNYzMewM04hD04jp1lzm2XCSG4Wt2lR6HLVb4Yvr7Wo5ZLqpRuxF4s949RvICleLVKaXuZ81EDNHpmlssFjdp/a+mqUhrGXix3pTfLnDv4uUrpKWyvUnq2zPmcAblp068EdAhFbe41HQGnTxbqTqBAbVwtjc1Y7kp7MaNKaWmZ85Ey57Eqpc/xGHaYQLj9Pf20+MVT/hIQOfTlDGd/v2DVXagxhmBcLY37cARLEDTuwUK8oatKaQ7ewgHsMCgHNeYFh3+Mdm9dZOTO+81fsMeSeIQLqI2r0PiozHkZTmhsw+P4tMy51ngfC7DSoBXoDPltf3L83Byj7aX++OkO9YUZFCbU0ggaBzGC3WXO31cpjeiqUgpYg4CZ/sUPp5/Tq1uMYwUKdM6J60+497pTOoe3mHnrYmFlzRhq42pptDTW4SV8XKX0LR7VVeZcVyk9iA/xlQE6tnW+i2rMLo5aNW+YMOzsrsrRsblCMKGWxi9VSivKnA9iU5XSK3ga31UpPVzm/FmZ8ydVShsx0wDtf32RRq2lRkdjnvMCgokUGjvxZJXSLI1dGMW1eERXldIcrME7BijGthjbYhwzFM8bih1DsWMonhfjmBjbYmyLsS3GthjbYmyLsS3Ude2iKqUSW/BamfOBKqUNeBvLsBAbsa3M+aRLQggms8IlZc4VnsHdVUovYwPO4HmsxhNlzidNmzZt2v9RqKn1KBBc5d2R1bUePXT8m6CPWvps3aF9ehZn66fCFNbSZ2tvW2+yKExhLXWtZyGYzFr6bN/Xe/RqOM7WT4UprKXPPrhhrcmiMIX9CRYv4u0MBGIsAAAAAElFTkSuQmCC);
+}
+.c_in_icon{
+  float:left;
+  position: relative;
+  width:15px;
+  height:10px;
+  margin-right:7px;
+}
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+.c_sp{
+  padding: 0 7px;
+}

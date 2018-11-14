@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+       "targets": {
+          "chrome": "58",
+          "ie": "9"
+        },
+        "modules": false
+      }
+    ]
+  ],
+  "ignore": [
+    "dist/*.js"
+  ]
+}

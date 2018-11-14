@@ -1,0 +1,238 @@
+#logo{
+  position: absolute;
+  z-index: 2;
+  left:0;
+  top:-31px;
+  width:190px;
+  height:170px;
+  box-shadow: 0 -12px 10px rgba(0,0,0,0.2);
+  background-color: $hover-bg-color;
+  border-bottom: 1px solid $search-border-color;
+}
+.logo{
+  width:100%;
+  height:100%;
+  position: absolute;
+}
+.logo_f1{
+  @extend .logo;
+  .logo_resource{
+    display: block;
+    width:190px;
+    height:170px;
+    background: url(//misc.360buyimg.com/mtd/pc/index_2017/2.1.0/static/images/sprite.head.png) no-repeat 0 0;
+  }
+}
+.logo_f2{
+  @extend .logo;
+  .logo_active{
+    display: block;
+    width:190px;
+    height:170px;
+    background: $hover-bg-color url(//img13.360buyimg.com/da/jfs/t1/4955/37/12202/183807/5bd2ba40E7495a934/867a9d58e5321643.gif?t=1540728130176) no-repeat;
+  }
+}
+#search{
+  height:140px;
+  z-index: 11;
+  position: relative;
+  .c_w{
+    height:140px;
+  }
+}
+#search_wrap{
+  position: absolute;
+  left:320px;
+  top:25px;
+  width:550px;
+  height:35px;
+}
+.search_style{
+  position: absolute;
+  left:0;
+  top:0;
+  padding:4px 44px 4px 4px;
+  width:450px;
+  height:25px;
+  border: 1px solid transparent;
+  line-height: 25px;
+  color:$search-font-color;
+  background: $hover-bg-color;
+  font-size: $lg-font;
+}
+#search_bg,#search_input{
+  @extend .search_style;
+}
+#search_input{
+  background: transparent;
+  outline: none;
+}
+
+.search_photo{
+  position: absolute;
+  right:65px;
+  top:10px;
+  width:19px;
+  height:15px;
+  overflow: hidden;
+  &:hover{
+    .search_photo_bg{
+      background-position: -30px 0;
+    }
+  }
+}
+.search_photo_bg{
+  display: block;
+  width:19px;
+  height:15px;
+  background: url(//misc.360buyimg.com/product/search/1.0.4/css/i/sprite-photo-search.png) no-repeat;
+  cursor: pointer;
+}
+#search_photo_btn{
+  background: transparent;
+  position: absolute;
+  right:0;
+  top:0;
+  z-index: 3;
+  width:200px;
+  height:200px;
+  opacity: 0;
+  cursor: pointer;
+}
+#search_button{
+  border-radius: 0;
+  position: absolute;
+  right:0;
+  top:0;
+  outline: none;
+  width:50px;
+  height:35px;
+  line-height: 35px;
+  border: 0;
+  background: $search-button-color;
+  color: $hover-bg-color;
+  font-size: $search-button-font;
+  cursor: pointer;
+  &:hover{
+    background: $search-button-hover;
+  }
+}
+#shop_car{
+  position: absolute;
+  right:99px;
+  top:25px;
+  z-index: 2;
+  .c_sp{
+    width:188px;
+    height:33px;
+    background: $hover-bg-color;
+    text-align: center;
+    line-height: 33px;
+    padding-left: 0;
+  }
+  .icon-cart{
+    font-size: 16px;
+    color: $primary-color;
+    margin-right: 3px;
+  }
+  a{
+    color: $primary-color;
+  }
+  .userinfo_dropdown{
+    width:308px;
+    top:35px;
+    right:0;
+    border-color:$short-color;
+  }
+  .shop_sku{
+    position: relative;
+    z-index: 2;
+    width:100%;
+    background: $hover-bg-color;
+  }
+
+  .shop_empty{
+    height:49px;
+    margin: auto;
+    padding: 10px 0;
+    text-align: center;
+    line-height: 49px;
+    overflow: hidden;
+    color: $search-shop-color;
+    i{
+      display: inline-block;
+      vertical-align: middle;
+      width:56px;
+      height:49px;
+      background: url(//img11.360buyimg.com/uba/jfs/t3571/299/131233948/1117/a1196554/58004d6dN2927f0f7.png);
+    }
+  }
+
+}
+.shop_i{
+  position: absolute;
+  top:5px;
+  left:140px;
+  display: inline-block;
+  padding:1px;
+  font-size: $normal-font;
+  line-height: $normal-font;
+  color: $hover-bg-color;
+  background: $primary-color;
+  border-radius: 7px;
+  min-width:12px;
+  text-align: center;
+}
+#search_words{
+  position: absolute;
+  left:320px;
+  top:65px;
+  width:550px;
+  height:20px;
+  line-height: 20px;
+  overflow: hidden;
+  a{
+    float: left;
+    margin-right: 10px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &.hot_red{
+      color: $primary-color;
+    }
+  }
+}
+#items{
+  position:absolute;
+  left:200px;
+  bottom:0;
+  width:790px;
+  height:40px;
+  padding-top: 20px;
+  overflow: hidden;
+  ul{
+    float: left;
+    li{
+      float: left;
+      margin-left: 30px;
+      a{
+        font-size: $lg-font;
+        height:40px;
+        display: block;
+        position: relative;
+        color: $nav-color;
+        &:hover{
+          color: $primary-color;
+        }
+      }
+    }
+  }
+  .items_space{
+    width:1px;
+    height:10px;
+    background: $short-border-color;
+    overflow: hidden;
+    margin: 3px -10px 0 20px;
+    float: left;
+  }
+}

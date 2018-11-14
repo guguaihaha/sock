@@ -1,0 +1,90 @@
+.lazyload_flr{
+  background: url(//misc.360buyimg.com/mtd/pc/index_2017/2.1.0/static/images/lazyload.gif);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width:100%;
+}
+.f_seckill{
+  height:275px;
+  margin-bottom:30px;
+}
+.f_row_1{
+  width:$width;
+  margin: 0 auto;
+}
+.f_inner_1{
+  background: $hover-bg-color;
+  overflow: hidden;
+  position: relative;
+  z-index: 9;
+}
+.f_clock{
+  position: relative;
+  float: left;
+  width: 190px;
+  height:275px;
+  background: $primary-color;
+  a{
+    color: $hover-bg-color;
+  }
+}
+.f_clock_a{
+  display: block;
+  width:100%;
+  height:100%;
+}
+.f_clock_sek{
+  position: absolute;
+  width:100%;
+  font-size: 34px;
+  left:0;
+  top:42px;
+  text-align: center;
+}
+.f_clock_subtit{
+  position: absolute;
+  left:0;
+  top:90px;
+  text-align: center;
+  width:100%;
+  font-size: 20px;
+  color: rgba(255,255,255,.5);
+}
+.f_clock_ico{
+  position: absolute;
+  left:86px;
+  top:126px;
+  display: block;
+  width:20px;
+  height:33px;
+  background: url(//misc.360buyimg.com/mtd/pc/index_2017/2.1.0/static/images/sprite.seckill.png);
+  background-position: -35px -25px;
+}
+.f_clock_remind{
+  position: absolute;
+  left:0;
+  width:100%;
+  text-align: center;
+  top:170px;
+  font-size: $ll-font;
+}
+.f_clock_time{
+  position: absolute;
+  left:30px;
+  top:212px;
+  height:40px;
+}
+.f_time{
+  position: relative;
+  float: left;
+  width:40px;
+  height:40px;
+  text-align: center;
+  background: $sec-time-bg;
+  margin-right: 5px;
+  span{
+    font-size: $sec-font;
+    font-weight: bold;
+    line-height: 40px;
+  }
+}
