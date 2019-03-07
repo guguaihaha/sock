@@ -27,9 +27,9 @@ $ npm run sock
 src--|开发目录
 
 -----|---core|开发常用工具包类，包含各种业务组件，最终会在lib目录下生成Sock的业务组件。同时也会合并其他业务组件到dist/combine.min.js
-
+     |
 -----|---javascript|业务逻辑代码放置区域，最后统一合并压缩并显示在首页index.html中用`<script>代码区域</script>`显示。
-
+     | 
 -----|---lib|第三方公共组件库,最终会合并成dist/combine.min.js，并且在注入到首页index.html底部
 
 -----|---pages|页面index.html的Dom结构，其中包含body(楼层)、js（上面javascript目录的js未压缩临时代码）、styles（scss未压缩的临时代码区域）和页面其他模块拼装而成
