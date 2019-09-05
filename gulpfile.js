@@ -16,7 +16,10 @@ const gulp = require('gulp'), //本地安装gulp所用到的地方
     Gbabel = require('gulp-babel'),
     uglify = require('rollup-plugin-uglify'),
     serveIndex = require('serve-index'),
-    watch = require('gulp-watch');
+    watch = require('gulp-watch'),
+    config = require('./sock.config');
+
+let _Mod = config.Mod
 
 /**
 * @Author: zhangjinglin
@@ -24,23 +27,7 @@ const gulp = require('gulp'), //本地安装gulp所用到的地方
 * @Date: Created in 2018/10/15 上午9:18
 * @Description:文件合并成首页的路径集合
 */
-const CCT = {
-    doctype : 'src/pages/doctype.html',
-    meta : 'src/pages/meta.html',
-    dns : 'src/pages/dns.html',
-    others : 'src/pages/others.html',
-    styles : 'src/pages/styles.html',
-    links : 'src/pages/links.html',
-    script : 'src/pages/script.html',
-    h1 : 'src/pages/_h_b.html',
-    S1: 'src/pages/body/firstScreen/ad.html',
-    S2: 'src/pages/body/firstScreen/userInfo.html',
-    S3: 'src/pages/body/firstScreen/search.html',
-    S4: 'src/pages/body/firstScreen/pictures.html',
-    Floor: 'src/pages/body/floor/',
-    js : 'src/pages/js.html',
-    h2 : 'src/pages/_b_h.html'
-}
+const CCT = config.CCT
 
 /**
 * @Author: zhangjinglin
@@ -48,18 +35,7 @@ const CCT = {
 * @Date: Created in 2018/10/15 上午9:19
 * @Description:其他路径集合
 */
-const CGI = {
-    //开发类样式路径
-    indexStyle : 'src/sass/index.scss',
-    //开发类脚本路径
-    indexJavascript : 'src/javascript/*.js',
-    //读取合并样式文件
-    indexCss : 'src/pages/styles/index.min.css',
-    //读取合并脚本文件
-    indexJs : 'src/pages/js/index.min.js',
-    //合并所有外部js文件
-    concatJs: 'src/lib/**/*.js'
-}
+const CGI = config.CGI
 
 
 /**
@@ -68,34 +44,14 @@ const CGI = {
 * @Date: Created in 2018/10/15 上午9:19
 * @Description:文件输出路径集合
 */
-const DEST = {
-    index : '',
-    //开发类样式生成路径
-    indexCss : 'src/pages/styles',
-    //开发类脚本生成路径
-    indexJs: 'src/pages/js',
-    //开发类样式生成页面路径
-    cssPage: 'src/pages',
-    //开发类脚本生成页面路径
-    jsPage: 'src/pages',
-    //外部合并输出路径
-    combineJs: 'dist'
-}
+const DEST = config.DEST
 /**
 * @Author: zhangjinglin
 * @Email: zhangjinglin@aliyun.com
 * @Date: Created in 2018/10/15 下午3:03
 * @Description:观察路径
 */
-const WATCH = {
-    indexPages : 'src/pages/**/*.html',
-    sass : 'src/sass/*.scss',
-    js : 'src/javascript/**/*.js',
-    cssPage : 'src/pages/styles/index.min.css',
-    jsPage : 'src/page/js/index.min.js',
-    sock : 'src/core/**/*.js',
-    concatJs : 'src/lib/**/*.js'
-}
+const WATCH = config.WATCH
 /**
 * @Author: zhangjinglin
 * @Email: zhangjinglin@aliyun.com
@@ -114,16 +70,26 @@ gulp.task('rebuildIndex', function() {
         CCT.styles,
         CCT.meta,
         CCT.links,
-        CCT.meta,
-        CCT.script,
-        CCT.h1,
-    ],
-        _S = [],
+        CCT.meta
+    ]
+    if(_Mod === 'development'){
+        _p = [..._p,CCT.js,CCT.script,CCT.h1]
+    }else{
+        _p = [..._p,CCT.script,CCT.h1]
+    }
+
+
+    let _S = [],
         _F = [],
-        _l = [
-            CCT.js,
-            CCT.h2
-        ]
+        _l = []
+    if(_Mod === 'development'){
+        _l = [..._l,CCT.js,CCT.h2]
+    }else{
+        _p = [..._l,CCT.h2]
+    }
+
+
+
     /**
     * @Author: zhangjinglin
     * @Email: zhangjinglin@aliyun.com
@@ -140,6 +106,7 @@ gulp.task('rebuildIndex', function() {
     * @Description:楼层显示方式,默认最多9个楼层,包含footer也属于楼层
     */
     for(let i = 1; i<= 9; i++){
+        _F.push(CCT.Floor+i+'.b.html')
         _F.push(CCT.Floor+i+'.html')
     }
 
@@ -245,7 +212,11 @@ gulp.task('rebuildJs' ,function(){
  * @Description:合成外部引用文件
  */
 gulp.task('concatJs' ,function(){
-    return gulp.src(['src/lib/jQuery/index.min.js',CGI.concatJs])
+    let _art = Object.assign([],CGI.concatJs)
+    if(_Mod === 'development'){
+        _art = [..._art,...CGI.concatDevJs]
+    }
+    return gulp.src(_art)
         .pipe(concat("combine.js"))
         .pipe(minifyJs())
         .pipe(rename({suffix:".min"}))
@@ -261,12 +232,7 @@ gulp.task('concatJs' ,function(){
 */
 gulp.task('webserver', function() {
     return gulp.src('./')
-        .pipe(webserver({
-            livereload: true,
-            directoryListing:true,
-            port:9876,
-            open: "./index.html"
-        }));
+        .pipe(webserver(config.server));
 });
 
 
@@ -313,14 +279,13 @@ gulp.task("rollup" ,async function(){
     })
 
     await dev.write({
-        file : 'src/lib/Sock/Sk.js',
+        file : 'src/lib/Sock/Sk.min.js',
         format : 'iife',
         name : 'Sock'
     })
     await runSequence(
         'concatJs'
     )
-
 })
 
 
@@ -334,7 +299,7 @@ gulp.task("watcher" ,function (){
     var rebuildIndex = gulp.watch(WATCH.indexPages , ['rebuildIndex']),
         buildSass = gulp.watch(WATCH.sass , ['_cssQueen']),
         buildJs = gulp.watch(WATCH.js , ['_jsQueen']),
-        sockJs = gulp.watch(WATCH.sock , ['rollup']),
+        // sockJs = gulp.watch(WATCH.sock , ['rollup']),
         concatJs = gulp.watch(WATCH.concatJs , ['concatJs'])
         //cssPage = gulp.watch(WATCH.cssPage , ['rebuildCss']),
         //jsPage = gulp.watch(WATCH.js , ['rebuildJs']),
@@ -353,9 +318,9 @@ gulp.task("watcher" ,function (){
         console.log('Watcher is build index javascript...')
     })
     //sock文件发生变化
-    sockJs.on('change', function(){
-        console.log('Watcher is concat sock.js...')
-    })
+    // sockJs.on('change', function(){
+    //     console.log('Watcher is concat sock.js...')
+    // })
     //外部合并的js文件变化
     concatJs.on('change', function(){
         console.log('Watcher is concat combine.min.js... ')
@@ -363,11 +328,16 @@ gulp.task("watcher" ,function (){
 
 })
 
-
-gulp.task('default',function(cb){
+let init = (cb) => {
     runSequence(
         'watcher',
         'webserver',
         cb
     )
+}
+
+
+gulp.task('default',function(cb){
+    init(cb)
 })
+

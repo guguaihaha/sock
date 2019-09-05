@@ -32,10 +32,18 @@
 </style>
 <!--all links href-->
 <link type="text/css" rel="stylesheet" href="" />
+</div>
+<!--all js here-->
+<script type="text/javascript" language="JavaScript" src="//storage.jd.com/cmsc/combine.min.js"></script>
+
+
 <!--some scripts config should be here-->
 <script type="text/javascript">
 
-
+$(function(){var io=new IntersectionObserver(callback,{rootMargin:"0px 0px 0px 0px"});var imgs=document.querySelectorAll('[data-src]');function callback(entries){entries.forEach(function(item){if(item.isIntersecting){item.target.src=item.target.dataset.src;io.unobserve(item.target);item.removeAttribute('data-src');}});}
+imgs.forEach(function(item){io.observe(item);});});function lazyloadImg(){}
+var host={index:'http://www.job.com'};var Router={getCat:{host:host.index,path:'/getMine',type:'get',response:{status:200,data:[1,2,3]}}};for(var item in Router){Mock.mock(Router[item].host+Router[item].path,Router[item].type,function(options){return Router[item].response;});}
+$.ajax({url:"http://www.job.com/getMine",type:"get",success:function success(data){console.log(data);},error:function error(e){console.log(e);}});
 </script>
 </head>
 
@@ -755,6 +763,9 @@
 </div>
 <div id="floors">
 
+<div style="height:500px;width:100%;background: #f00;position: relative;z-index: 17;" contenteditable="true">
+
+</div>
 <div id="sk" class="f_seckill">
     <div class="f_row_1 f_inner_1">
         <div class="f_clock">
@@ -784,6 +795,7 @@
         </div>
     </div>
 </div>
+
 <div class="lazyload_flr" title="大促楼层" style="height: 620px;"></div>
 <style type="text/css">
     .flr_enjoy{
@@ -953,6 +965,9 @@
             </div>
         </div>
     </div>
+</div>
+<div class="lazyload" style="width:100%;height:200px;background: #f00;">
+    <img class="lazy" width="100" height="100"  data-src="https://www.zhangjinglin.cn/bokeStatic/css/img/zjl.png" />
 </div>
 <div class="lazyload_flr" title="核心场景1" style="height: 480px;"></div>
 <style type="text/css">
@@ -1574,15 +1589,18 @@
         </div>
     </div>
 </div>
+
 <div class="lazyload_flr" title="核心场景2" style="height: 480px;"></div>
+
 <div class="lazyload_flr" title="JOY寻宝" style="height: 585px;"></div>
+
 <div class="lazyload_flr" title="特色推荐" style="height: 450px;"></div>
+
 <div class="lazyload_flr" title="京东直播" style="height: 520px;"></div>
+
 <div class="lazyload_flr" title="还没逛够" style="height: 730px;"></div>
+
 <div class="lazyload_flr" style="height: 500px;"></div>
-</div>
-<!--all js here-->
-<script type="text/javascript" language="JavaScript" src="/dist/combine.min.js"></script>
 </div>
 </body>
 </html>
