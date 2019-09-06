@@ -8,6 +8,7 @@
     "test": "test"
   },
   "dependencies": {
+    "gulp-eslint": "^6.0.0",
     "mockjs": "^1.0.1-beta3",
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-node-resolve": "^3.4.0",

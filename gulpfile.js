@@ -17,6 +17,7 @@ const gulp = require('gulp'), //本地安装gulp所用到的地方
     uglify = require('rollup-plugin-uglify'),
     serveIndex = require('serve-index'),
     watch = require('gulp-watch'),
+    eslint = require('gulp-eslint'),
     config = require('./sock.config');
 
 let _Mod = config.Mod
@@ -149,6 +150,9 @@ gulp.task('indexStyle', function () {
 gulp.task('indexJavascript',function(){
     return  gulp.src(CGI.indexJavascript)
         .pipe(concat("index.js"))
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError())
         .pipe(Gbabel())
         .pipe(gulp.dest(DEST.indexJs))
         .pipe(minifyJs())
